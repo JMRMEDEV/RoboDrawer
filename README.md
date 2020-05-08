@@ -1,7 +1,7 @@
 # RoboDrawer
 
 This **Matlab** script generates a simulated **UR5** manipulator from **Universal Robots**, capable of drawing given black and white 
-pictures, by using @petercorke **machine vision** and **robotics** toolboxes. By the use of these, generates the mathematical model 
+pictures, by using [Peter Corke](https://github.com/petercorke) **machine vision** and **robotics** toolboxes. By the use of these, generates the mathematical model 
 from the robot (forward and inverse kinematics) for its use for the drawing algorithm. This algorithm works by using a point matrix
 approach isntead of parameterizing curves, which has advantages and disadvantages that we will discuss later.
 
@@ -54,7 +54,7 @@ in future releases), depending of the complexity of the picture and your hardwar
 1. First, the script executes **startup_rvc**, which calls the robotics toolbox.
 
 2. The scripts executes **ur5_coppelia_com**, which makes the connection through the Matlab remote API. Such script, was developed
-based on this [video](https://www.youtube.com/watch?v=WaYBTA6QPY0) and the work developed by @radica1113. It also builds some
+based on this [video](https://www.youtube.com/watch?v=WaYBTA6QPY0) and the work developed by [Radica R](https://github.com/radica1113). It also builds some
 necessary stuff for correctly handling the UR5 and some other components in CoppeliaSim.
 
 3. Later, **point_detector** is executed. This function reads the given picture, reduces its size for a faster handling and reducing
@@ -86,12 +86,12 @@ life.
 12. Finally, the manipulator goes back to its regular setup.
 
 **Notes:** A system for detecting when points calculted were reached by the arm was designed but did not work. Instead (bad practice)
-Matlab pauses were stablished for this purpose. As it was already said some of the functions were retrieved from @radica1113 and its
+Matlab pauses were stablished for this purpose. As it was already said some of the functions were retrieved from [Radica R](https://github.com/radica1113) and its
 team, these were: **copyf**, which is used for copying dummies and other spacial stuff in CoppeliaSim and a part of **ur5_coppelia_com**,
 which stablishes connection with the API. It is also replicated its usage of their function **movef**, but translated to use Robotics
 Toolkit. All the remaining algorithms and logic were developed by me and my team (except from the functions belonging to the toolboxes).
 We also designed our fixed version of the CoppeliaSim UR5 scene, adapted to behave as the Robotics Toolbox SerialLink object. The **vrchk**
-function for checking the Remote API return status was implemented by @radica1113, but he, at the same time, based on **Renaud Detry**
+function for checking the Remote API return status was implemented by [Radica R](https://github.com/radica1113), but he, at the same time, based on **Renaud Detry**
 work.
 
 ## Parameters setup
