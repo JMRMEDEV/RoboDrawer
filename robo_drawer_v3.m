@@ -38,7 +38,8 @@ v_final = [120 -40 40 0 30 0];
 v_final = deg2rad(v_final);
 
 % Vector that takes the picture points input and rezises it
-W = 0.005 * coordinates;
+resize_factor = 0.005;
+W = resize_factor * coordinates;
 
 % Vector meant for storaging all the calculated positions
 full_traj = [];
@@ -126,7 +127,7 @@ for i = 1:size(W)
 
         % Through an Homogeneous Transformation Matrix, the working plane
         % and first point, are defined and set.
-        new_point = transl(0.535736116985854, W(i,1), W(i,2)) * troty(pi/2);
+        new_point = transl(MTH_final(1,4), W(i,1), W(i,2)) * troty(pi/2);
         
         % The inverse kinematics of such HTM is obtained by the use
         % of ikunc from the robotics toolbox
@@ -151,7 +152,7 @@ for i = 1:size(W)
         
     % If i ~= 0, the continuous drawing is performed
     else
-        new_point = transl(0.535736116985854, W(i,1), W(i,2)) * troty(pi/2);
+        new_point = transl(MTH_final(1,4), W(i,1), W(i,2)) * troty(pi/2);
         q1 = UR5.ikunc(new_point);
         full_traj(i,1) = q1(1);
         full_traj(i,2) = q1(2);
@@ -162,7 +163,7 @@ for i = 1:size(W)
         
         % This 'half_point' is defined to put the drawing tool away
         % from the plane
-        half_point = transl(0.52, W(i,1), W(i,2)) * troty(pi/2);
+        half_point = transl(MTH_final(1,4)-0.01, W(i,1), W(i,2)) * troty(pi/2);
         q1_2 = UR5.ikunc(half_point);
         
         prev_point = [full_traj(i-1,1) full_traj(i-1,2) full_traj(i-1,3) full_traj(i-1,4) full_traj(i-1,5) full_traj(i-1,6)];

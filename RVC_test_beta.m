@@ -37,7 +37,7 @@ end
 for i = 1:size(W)
     if i == 1
         q_in = UR5_1.ikunc(MTH_final);
-        new_point = transl(0.535736116985854, W(i,1), W(i,2)) * troty(pi/2);
+        new_point = transl(MTH_final(1,4), W(i,1), W(i,2)) * troty(pi/2);
         q1 = UR5_1.ikunc(new_point);
         full_traj(i,1) = q1(1);
         full_traj(i,2) = q1(2);
@@ -48,7 +48,7 @@ for i = 1:size(W)
         k1 = jtraj(q_in, q1, t);
         UR5_1.plot(k1);
     else
-        new_point = transl(0.535736116985854, W(i,1), W(i,2)) * troty(pi/2);
+        new_point = transl(MTH_final(1,4), W(i,1), W(i,2)) * troty(pi/2);
         q1 = UR5_1.ikunc(new_point);
         full_traj(i,1) = q1(1);
         full_traj(i,2) = q1(2);
@@ -57,13 +57,13 @@ for i = 1:size(W)
         full_traj(i,5) = q1(5);
         full_traj(i,6) = q1(6);
         prev_point = [full_traj(i-1,1) full_traj(i-1,2) full_traj(i-1,3) full_traj(i-1,4) full_traj(i-1,5) full_traj(i-1,6)];
-        half_point = transl(0.52, W(i,1), W(i,2)) * troty(pi/2);
+        half_point = transl(MTH_final(1,4)-0.01, W(i,1), W(i,2)) * troty(pi/2);
         q1_2 = UR5_1.ikunc(half_point);
         k1 = jtraj(prev_point, q1_2, t);
         UR5_1.plot(k1);
         k2 = jtraj(q1_2, q1, t);
         UR5_1.plot(k1);
-        plot3(0.535736116985854, W(i,1), W(i,2), '.');
+        plot3(MTH_final(1,4), W(i,1), W(i,2), '.');
         xlim([-1 1]);
         ylim([-1 1]);
         zlim([-1 1]);

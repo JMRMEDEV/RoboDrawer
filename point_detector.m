@@ -26,7 +26,8 @@ function pointed_image = point_detector(picture_location)
     % Reduces the size in ratio 10:1 for an easier
     % point detection. In somehow, converts pixels
     % to points.
-    smaller = idecimate(picture, 7);
+    factor = 7;
+    smaller = idecimate(picture, factor);
 
     [height,width,extra] = size(smaller);
     points_exist = [height,width];
@@ -49,10 +50,12 @@ function pointed_image = point_detector(picture_location)
         end
     end
 
-%    Constructs an offset in the x-axis. This was used for a specific 
-   % application, may be omitted for different usages.
+    % Constructs an offset in the axes. This was used for a specific 
+    % application, may be omitted for different usages.
     for n1 = 1:length(coordinates)
+        % Offset for the x-axis (in points units)
         coordinates(n1,1) = coordinates(n1,1) - 50;
+        % Offset for the y-axis (in points units)
         coordinates(n1,2) = coordinates(n1,2) + 30;
         xlim([-100 100]);
         plot(coordinates(n1,1),coordinates(n1,2), 'o');
