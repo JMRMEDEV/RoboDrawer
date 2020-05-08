@@ -134,10 +134,12 @@ Here, are some examples of the drawings I have tested.
 
 ![alt text](https://github.com/JMRMEDEV/RoboDrawer/blob/master/Pictures/bart.jpg "Input Picture: Bart")
 ![alt text](https://github.com/JMRMEDEV/RoboDrawer/blob/master/Pictures_results/bart.jpg "Drawing Result: Bart")
+
 Video of the process: [bart](https://youtu.be/DJkrqklCV6Y)
 
 ![alt text](https://github.com/JMRMEDEV/RoboDrawer/blob/master/Pictures/catbug.jpg "Input Picture: Catbug")
 ![alt text](https://github.com/JMRMEDEV/RoboDrawer/blob/master/Pictures_results/catbug.jpg "Drawing Result: Catbug")
+
 Video of the process: [catbug](https://youtu.be/kPVfW9TcqEc)
 
 ## Future improvements
