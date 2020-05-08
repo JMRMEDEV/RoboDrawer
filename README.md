@@ -11,19 +11,19 @@ element from **CoppeliaSim**.
 
 ## Requirements
 
--Matlab 2010a or newer
+- Matlab 2010a or newer
 
--CoppeliaSim Matlab API (included in this project)
+- CoppeliaSim Matlab API (included in this project)
 
--Peter Corke's Robotics Toolbox v9.10 (included in this project)
+- Peter Corke's Robotics Toolbox v9.10 (included in this project)
 
--Peter Corke's Machine Vision Toolbox v4.3 (included in this project)
+- Peter Corke's Machine Vision Toolbox v4.3 (included in this project)
 
--CoppeliaSim v4 (not included), free educational version available at [CoppeliaSim's page](https://www.coppeliarobotics.com/)
+- CoppeliaSim v4 (not included), free educational version available at [CoppeliaSim's page](https://www.coppeliarobotics.com/)
 
--UR5 custom scene (included in this project)
+- UR5 custom scene (included in this project)
 
--A high-end computer that can affords rough processes, since CoppeliaSim consumpts many resources.
+- A high-end computer that can affords rough processes, since CoppeliaSim consumpts many resources.
 
 ## Preliminary steps
 
